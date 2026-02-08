@@ -53,7 +53,7 @@ let
           skopeoOutputFormats."${outputFormat}"
             or (throw "`outputFormat` must be one of: ${lib.concatStringsSep ", " (lib.attrNames skopeoOutputFormats)}");
       in
-      stdenvNoCC.mkDerivation {
+      {
         name = outputName;
         src = docker-tarball;
         dontUnpack = true;
